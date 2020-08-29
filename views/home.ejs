@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="center1">
+        <% var list=text.split('$') %>
+            <%list.forEach((item) => { %>
+                <div class="card">
+                    <div class="card-body">
+                        <%=item %> 
+         
+                    </div>
+                  </div>
+            <%}); %>
+        
+    </div>
+    
+
+    <div class="center">
+        <form>
+            <div>
+              <input type="hidden" class="form-control" id="email" value="<%=email %> ">
+            </div>
+            <div>
+              <label for="text" class="form-label">Add whatever you want</label>
+              <input type="text" class="form-control" id="text">
+            </div>
+            <br>
+            <button type="submit" class="submit btn btn-primary">Add to list</button>
+          </form>
+    </div>
+</body>
+<style>
+    .center1{
+        width: 50%;
+        margin-left: 25%;
+
+    }
+    .center{
+        width: 50%;
+        height: 50vh;
+        margin: 25%;
+        margin-top: 10%;
+
+    }
+</style>
+<script>
+    const add = document.querySelector(".submit");
+    add.addEventListener("click", function (event) {
+      event.preventDefault();
+      email = document.querySelector("#email").value;
+      text = document.querySelector("#text").value;
+      url = `/update`;
+      fetch(url, {
+        method: "POST",
+        body: new URLSearchParams(`email=${email}&text=${text}`)}).then((res) => res.json()).then((data) => {
+          if (data.updatestat == true) {
+              window.location.reload()
+          }else{
+            window.alert(data.err)
+          }}).catch((err) => {
+              window.alert(err)
+            });
+        }
+    );
+    </script>
+</html>

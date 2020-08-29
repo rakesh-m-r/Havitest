@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-UP</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="center">
+        <form>
+            <div>
+                <label for="email" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+            <div>
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div>
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" required>
+            </div>
+            <div>
+                <label for="password1" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="password1" required>
+              </div>
+              <div>
+                <label for="dob" class="form-label">DOB</label>
+                <input type="date" class="form-control" id="dob" required>
+              </div>
+              <div>
+                <label for="password" class="form-label">Gender</label>
+                <select id="gender" class="form-select" required>
+                    <option selected>Open this select menu</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Other</option>
+                  </select>              </div>
+            <br>
+            <button type="submit" class="submit btn btn-primary">Sign-UP</button>
+          </form>
+          <br>
+          <span>Already user? <a href="/">Login</a></span>
+        </div>
+</body>
+<style>
+    .center{
+        width: 50%;
+        height: 50vh;
+        margin: 25%;
+        margin-top: 10%;
+    }
+</style>
+<script>
+const submit = document.querySelector(".submit");
+
+submit.addEventListener("click", function (event) {
+  event.preventDefault();
+    const url = `/signup`;
+    fetch(url, {
+        method: "POST",
+        body: new URLSearchParams(`email=${document.querySelector("#email").value}&password=${document.querySelector("#password").value}&name=${document.querySelector("#name").value}&dob=${document.querySelector("#dob").value}&gender=${document.querySelector("#gender").value}`),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+          if (data.signupstat == true) {
+            window.alert("SignUp successful")
+            window.setTimeout(() => {
+              window.location.replace("/")
+            }, 3000);
+        } else {
+          window.alert(data.err)
+        }
+      })
+  .catch((err) => {
+    window.alert(err)
+  });
+});
+
+</script>
+</html>

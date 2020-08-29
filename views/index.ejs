@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="center">
+    <form>
+        <div>
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email">
+        </div>
+        <div>
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password">
+        </div>
+        <br>
+        <button type="submit" class="submit btn btn-primary">Login</button>
+      </form>
+      <br>
+      <span>New user? <a href="/signup">Sign-UP</a></span>
+      <br><br><br>
+      <span>If you are a admin? <a href="/admin">Admin LogIn</a></span>
+    </div>
+
+
+</body>
+<style>
+    .center{
+        width: 50%;
+        height: 50vh;
+        margin: 25%;
+        margin-top: 10%;
+
+    }
+</style>
+<script>
+const login = document.querySelector(".submit");
+login.addEventListener("click", function (event) {
+  event.preventDefault();
+  email = document.querySelector("#email").value;
+  password = document.querySelector("#password").value;
+  url = `/login`;
+  fetch(url, {
+    method: "POST",
+    body: new URLSearchParams(`email=${email}&password=${password}`)}).then((res) => res.json()).then((data) => {
+      if (data.loginstat == true) {
+        window.location.replace(`/user/home?email=${email}&authtoken=${password}`);
+      }else{
+        window.alert(data.err)
+      }}).catch((err) => {
+          window.alert(err)
+        });
+    }
+);
+</script>
+</html>
