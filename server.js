@@ -1,5 +1,7 @@
 var express = require("express");
 var mysql = require("mysql");
+var cors = require('cors')
+
 var connected=false;
 var con = mysql.createConnection({
     host: "sql12.freemysqlhosting.net",
@@ -15,7 +17,7 @@ con.connect(function (err) {
 });
 
 var app = express();
-
+app.use(cors())
 app.set("view engine", "ejs");
 
 const PORT = process.env.PORT || 3000;
