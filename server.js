@@ -2,10 +2,10 @@ var express = require("express");
 var mysql = require("mysql");
 var connected=false;
 var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "havi"
+    host: "sql12.freemysqlhosting.net",
+    user: "sql12362681",
+    password: "hK11vvLmGU",
+    database: "sql12362681"
 });
 
 con.connect(function (err) {
