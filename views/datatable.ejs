@@ -38,7 +38,7 @@
       </thead>
       <tr>
         <td><label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" checked="" />
             <span></span></label>Futterkiste
         </td>
         <td>Germany</td>
@@ -46,7 +46,7 @@
       </tr>
       <tr>
         <td><label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" checked="" />
             <span></span></label>Berglunds snabbkop</td>
         <td>Sweden</td>
         <td>3327456</td>
@@ -54,7 +54,7 @@
       </tr>
       <tr>
         <td><label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" checked="" />
             <span></span></label>Island Trading</td>
         <td>UK</td>
         <td>8989322</td>
@@ -62,7 +62,7 @@
       </tr>
       <tr>
         <td><label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" checked="" />
             <span></span></label>Koniglich Essen</td>
         <td>Germany</td>
         <td>67687</td>
@@ -70,7 +70,7 @@
       </tr>
       <tr>
         <td><label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" checked="" />
             <span></span></label>Koniglich Essen</td>
         <td>India</td>
         <td>3787843</td>
@@ -78,14 +78,14 @@
       </tr>
       <tr>
         <td><label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" checked="" />
             <span></span></label>Koniglich Essen</td>
         <td>India</td>
         <td>05645</td>
       </tr>
       <tr>
         <td><label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" checked="" />
             <span></span></label>Koniglich Essen</td>
         <td>India</td>
         <td>05645</td>
@@ -93,7 +93,7 @@
       </tr>
       <tr>
         <td><label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" checked="" />
             <span></span></label>Koniglich Essen</td>
         <td>Germany</td>
         <td>05645</td>
@@ -101,13 +101,13 @@
       </tr>
       <tr>
         <td><label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" checked="" />
             <span></span></label>Koniglich Essen</td>
         <td>Germany</td>
         <td>05645</td>
       <tr>
         <td><label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" checked="" />
             <span></span></label>Berglunds snabbkop</td>
         <td>Sweden</td>
         <td>3327456</td>
@@ -115,7 +115,7 @@
       </tr>
       <tr>
         <td><label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" checked="" />
             <span></span></label>Berglunds snabbkop</td>
         <td>Sweden</td>
         <td>3327456</td>
@@ -123,7 +123,7 @@
       </tr>
       <tr>
         <td><label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" checked="" />
             <span></span></label>Berglunds snabbkop</td>
         <td>Sweden</td>
         <td>3327456</td>
@@ -131,7 +131,7 @@
       </tr>
       <tr>
         <td><label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" checked="" />
             <span></span></label>Berglunds snabbkop</td>
         <td>Sweden</td>
         <td>3327456</td>
@@ -139,7 +139,7 @@
       </tr>
       <tr>
         <td><label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input  type="checkbox" onclick="uncheck(this)" class="filled-in" checked="" />
             <span></span></label>Berglunds snabbkop</td>
         <td>Sweden</td>
         <td>3327456</td>
@@ -386,7 +386,6 @@
     var head = document.querySelector("#h" + n + " .notshow")
     document.querySelector(".active").classList.remove("active");
     var stat = document.querySelector("#h" + n).getAttribute("data-head");
-    console.log(stat)
     if (stat == "asc") {
       head.classList.add("active");
       head.innerHTML = "arrow_upward"
@@ -409,22 +408,9 @@
     window.location.reload()
   }
 
-  function checkAll(ele) {
-    var checkboxes = document.getElementsByTagName('input');
-    if (ele.checked) {
-      for (var i = 0; i < checkboxes.length; i++) {
-        if (checkboxes[i].type == 'checkbox') {
-          checkboxes[i].checked = true;
-        }
-      }
-    } else {
-      for (var i = 0; i < checkboxes.length; i++) {
-        console.log(i)
-        if (checkboxes[i].type == 'checkbox') {
-          checkboxes[i].checked = false;
-        }
-      }
-    }
+  function uncheck(ele){
+    if(!ele.checked)
+    document.querySelector("#select-all").checked=false;
   }
 </script>
 
