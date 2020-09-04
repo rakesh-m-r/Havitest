@@ -5,9 +5,9 @@ var cors = require('cors')
 var connected=false;
 var con = mysql.createConnection({
     host: "sql12.freemysqlhosting.net",
-    user: "sql12362681",
-    password: "hK11vvLmGU",
-    database: "sql12362681"
+    user: "sql12362997",
+    password: "WVQtqNAk94",
+    database: "sql12362997"
 });
 
 con.connect(function (err) {
