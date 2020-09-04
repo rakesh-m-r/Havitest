@@ -133,6 +133,9 @@ app.get("/admin",(req,res)=>{
         })
     }
 })
+app.get("/datatable",(req,res)=>{
+    res.render("datatable");
+})
 app.use((req, res) => {
     res.render("404")
 });

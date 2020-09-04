@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Havi Data-table</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap"
+    rel="stylesheet">
+
+<body>
+  <div class="container z-depth-2 padd">
+    <div class="row">
+      <h5 class="col s6">Table-Title</h5>
+      <div class=" col s6 row flex padd"><sub class="col s2 search material-icons">search</sub>
+        <input type="text" id="myInput" class="col s11 search-input" placeholder="Search for names.."
+          data-table="table">
+        <sub onclick="reset()" class="col s1 search close material-icons">close</sub>
+      </div>
+    </div>
+
+    <table id="myTable" class="table">
+      <thead class="header #61dafb">
+        <th id="h0" data-head="">
+          Name</th>
+        <th onclick="sortTable(1)" id="h1" data-head=""><span class="notshow material-icons"></span>
+          <sup>Country</sup></th>
+        <th onclick="sortTable1('table', 2)" id="h2" data-head=""><span class="notshow material-icons"></span>
+          <sup>Population</sup></th>
+      </thead>
+      <tr>
+        <td><label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span></label>Futterkiste
+        </td>
+        <td>Germany</td>
+        <td>33322</td>
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span></label>Berglunds snabbkop</td>
+        <td>Sweden</td>
+        <td>3327456</td>
+
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span></label>Island Trading</td>
+        <td>UK</td>
+        <td>8989322</td>
+
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span></label>Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
+
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span></label>Koniglich Essen</td>
+        <td>India</td>
+        <td>3787843</td>
+
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span></label>Koniglich Essen</td>
+        <td>India</td>
+        <td>05645</td>
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span></label>Koniglich Essen</td>
+        <td>India</td>
+        <td>05645</td>
+
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span></label>Koniglich Essen</td>
+        <td>Germany</td>
+        <td>05645</td>
+
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span></label>Koniglich Essen</td>
+        <td>Germany</td>
+        <td>05645</td>
+      <tr>
+        <td><label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span></label>Berglunds snabbkop</td>
+        <td>Sweden</td>
+        <td>3327456</td>
+
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span></label>Berglunds snabbkop</td>
+        <td>Sweden</td>
+        <td>3327456</td>
+
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span></label>Berglunds snabbkop</td>
+        <td>Sweden</td>
+        <td>3327456</td>
+
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span></label>Berglunds snabbkop</td>
+        <td>Sweden</td>
+        <td>3327456</td>
+
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span></label>Berglunds snabbkop</td>
+        <td>Sweden</td>
+        <td>3327456</td>
+
+      </tr>
+
+      </tr>
+    </table>
+    <p class="active"></p>
+  </div>
+</body>
+<style>
+  .close {
+    margin-left: 1vw;
+  }
+
+  table {
+    max-height: 50vw !important;
+    overflow-y: scroll;
+  }
+
+  .search {
+    width: auto !important;
+    color: black !important;
+    padding: 10px 0px 0px 0px !important;
+    margin: 0px !important;
+  }
+
+  .padd {
+    padding: 2vw;
+  }
+
+  body {
+    background-color: #fff;
+    font-family: Mulish, Roboto, Helvetica Neue, Arial, sans-serif;
+  }
+
+  th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  th[scope=row] {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+
+  th:not([scope=row]) {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #f6f7f9;
+
+  }
+
+  [type="checkbox"].filled-in:checked+span:not(.lever):before {
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+  }
+
+  [type="checkbox"].filled-in:checked+span:not(.lever):after {
+    border: 2px solid #61dafb;
+    background-color: #61dafb;
+  }
+
+  [type="checkbox"].filled-in.tabbed:checked:focus+span:not(.lever):after {
+    background-color: black;
+    border-color: black;
+  }
+
+  tr:hover {
+    background-color: #f6f7f9;
+  }
+
+  .notshow {
+    visibility: hidden;
+  }
+
+  .active {
+    visibility: inherit;
+  }
+
+  .flex {
+    display: flex;
+    border-bottom: 1px solid #9e9e9e;
+  }
+
+  .flex>input {
+    margin-bottom: 0px !important;
+  }
+
+  #myInput {
+    border: none;
+    margin-left: 10px !important;
+  }
+
+  .header {
+    background-color: #f6f7f9;
+  }
+
+  .material-icons {
+    color: #979797;
+    font-size: 1.5rem;
+  }
+
+  sup {
+    font-size: 14px;
+  }
+</style>
+<script>
+  function addseletall() {
+    document.querySelector("#h0").innerHTML = `
+            <label class="col s3"> <input type="checkbox" id="select-all" class="filled-in">
+            <span></span></label><sup onclick="sortTable(0)">Name</sup><span class="notshow material-icons"></span>`
+  }
+  addseletall()
+  var TableFilter = (function (myArray) {
+    var search_input;
+
+    function _onInputSearch(e) {
+      search_input = e.target;
+      var tables = document.getElementsByClassName(search_input.getAttribute('data-table'));
+      myArray.forEach.call(tables, function (table) {
+        myArray.forEach.call(table.tBodies, function (tbody) {
+          myArray.forEach.call(tbody.rows, function (row) {
+            var text_content = row.textContent.toLowerCase();
+            var search_val = search_input.value.toLowerCase();
+            row.style.display = text_content.indexOf(search_val) > -1 ? '' : 'none';
+          });
+        });
+      });
+    }
+
+    return {
+      init: function () {
+        var inputs = document.getElementsByClassName('search-input');
+        myArray.forEach.call(inputs, function (input) {
+          input.oninput = _onInputSearch;
+        });
+      }
+    };
+  })(Array.prototype);
+
+  document.addEventListener('readystatechange', function () {
+    if (document.readyState === 'complete') {
+      TableFilter.init();
+    }
+  });
+
+
+  function sortTable(n) {
+    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+    table = document.querySelector(".table");
+    switching = true;
+    dir = "asc";
+    while (switching) {
+      switching = false;
+      rows = table.rows;
+      for (i = 1; i < (rows.length - 1); i++) {
+        shouldSwitch = false;
+        x = rows[i].getElementsByTagName("TD")[n];
+        y = rows[i + 1].getElementsByTagName("TD")[n];
+        if (dir == "asc") {
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            document.querySelector("#h" + n).setAttribute("data-head", "asc")
+            arrow(n);
+            shouldSwitch = true;
+            break
+          }
+        } else if (dir == "desc") {
+          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+            document.querySelector("#h" + n).setAttribute("data-head", "desc")
+            arrow(n);
+            shouldSwitch = true;
+            break;
+          }
+        }
+      }
+      if (shouldSwitch) {
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+        switchcount++;
+      } else {
+        if (switchcount == 0 && dir == "asc") {
+          dir = "desc";
+          switching = true;
+        }
+      }
+    }
+  }
+
+  function sortTable1(tableClass, n) {
+    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+
+    table = document.getElementsByClassName(tableClass)[0];
+    switching = true;
+    dir = "asc";
+    while (switching) {
+      switching = false;
+      rows = table.getElementsByTagName("TR");
+      for (i = 1; i < (rows.length - 1); i++) {
+        shouldSwitch = false;
+        x = rows[i].getElementsByTagName("TD")[n];
+        y = rows[i + 1].getElementsByTagName("TD")[n];
+        var cmpX = isNaN(parseInt(x.innerHTML)) ? x.innerHTML.toLowerCase() : parseInt(x.innerHTML);
+        var cmpY = isNaN(parseInt(y.innerHTML)) ? y.innerHTML.toLowerCase() : parseInt(y.innerHTML);
+        cmpX = (cmpX == '-') ? 0 : cmpX;
+        cmpY = (cmpY == '-') ? 0 : cmpY;
+        if (dir == "asc") {
+          if (cmpX > cmpY) {
+            shouldSwitch = true;
+            document.querySelector("#h" + n).setAttribute("data-head", "asc")
+            arrow(n);
+            break;
+          }
+        } else if (dir == "desc") {
+          if (cmpX < cmpY) {
+            shouldSwitch = true;
+            document.querySelector("#h" + n).setAttribute("data-head", "desc")
+            arrow(n);
+            break;
+          }
+        }
+      }
+      if (shouldSwitch) {
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+        switchcount++;
+      } else {
+        if (switchcount == 0 && dir == "asc") {
+          dir = "desc";
+          switching = true;
+        }
+      }
+    }
+  }
+
+  function arrow(n) {
+    var head = document.querySelector("#h" + n + " .notshow")
+    document.querySelector(".active").classList.remove("active");
+    var stat = document.querySelector("#h" + n).getAttribute("data-head");
+    console.log(stat)
+    if (stat == "asc") {
+      head.classList.add("active");
+      head.innerHTML = "arrow_upward"
+    } else {
+      head.classList.add("active");
+      head.innerHTML = "arrow_downward"
+    }
+  }
+
+  document.querySelector('#select-all').onclick = function () {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var checkbox of checkboxes) {
+      checkbox.checked = this.checked;
+    }
+  }
+
+  function reset() {
+    var inputs = document.querySelector('.search-input');
+    inputs.value = ""
+    window.location.reload()
+  }
+
+  function checkAll(ele) {
+    var checkboxes = document.getElementsByTagName('input');
+    if (ele.checked) {
+      for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].type == 'checkbox') {
+          checkboxes[i].checked = true;
+        }
+      }
+    } else {
+      for (var i = 0; i < checkboxes.length; i++) {
+        console.log(i)
+        if (checkboxes[i].type == 'checkbox') {
+          checkboxes[i].checked = false;
+        }
+      }
+    }
+  }
+</script>
+
+</html>
