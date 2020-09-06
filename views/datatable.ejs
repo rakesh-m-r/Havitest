@@ -20,50 +20,25 @@
   <div class="container z-depth-2 padd">
     <div class="row">
       <h5 class="col s6">Table-Title</h5>
-      <div class=" col s6 row flex padd"><sub class="col s2 search material-icons">search</sub>
-        <input type="text" id="myInput" class="col s11 search-input" placeholder="Search ...."
-          data-table="table">
+      <div class=" col s6 row searchbox flex padd"><sub class="col s2 search material-icons">search</sub>
+        <input type="text" id="myInput" class="col s11 search-input" placeholder="Search ...." data-table="table">
         <sub onclick="reset()" class="col s1 search close material-icons">close</sub>
       </div>
     </div>
 
     <table id="myTable" class="table">
       <thead class="header #61dafb">
-        <th id="h0" data-head="">
-          Name</th>
-        <th onclick="sortTable(1)" id="h1" data-head=""><span class="notshow material-icons"></span>
-          <sup>Country</sup></th>
-        <th onclick="sortTable1('table', 2)" id="h2" data-head=""><span class="notshow material-icons"></span>
-          <sup>Population</sup></th>
+        <th class="box"><label class="col s3"> <input type="checkbox" onclick="selectAll()" id="select-all" id="indeterminate-checkbox" indeterminate="true" ><span></span></label></th>
+        <th onclick="sortTable(1)" id="h1" data-head=""><span>Name</span><span class="notshow material-icons"></span></th>
+        <th onclick="sortTable(2)" id="h2" data-head=""><span class="notshow material-icons"></span><span>Country</span></th>
+        <th onclick="sortTable1('table', 3)" id="h3" data-head=""><span class="notshow material-icons"></span>
+          <span>Population</span></th>
       </thead>
       <tr>
         <td><label>
             <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
-            <span></span></label>Futterkiste
-        </td>
-        <td>Germany</td>
-        <td>33322</td>
-      </tr>
-      <tr>
-        <td><label>
-            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
-            <span></span></label>Berglunds snabbkop</td>
-        <td>Sweden</td>
-        <td>3327456</td>
-
-      </tr>
-      <tr>
-        <td><label>
-            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
-            <span></span></label>Island Trading</td>
-        <td>UK</td>
-        <td>8989322</td>
-
-      </tr>
-      <tr>
-        <td><label>
-            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
-            <span></span></label>Koniglich Essen</td>
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
         <td>Germany</td>
         <td>67687</td>
 
@@ -71,7 +46,67 @@
       <tr>
         <td><label>
             <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
-            <span></span></label>Koniglich Essen</td>
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
+
+      </tr><tr>
+        <td><label>
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
+
+      </tr><tr>
+        <td><label>
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
+
+      </tr><tr>
+        <td><label>
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
+
+      </tr><tr>
+        <td><label>
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
+
+      </tr><tr>
+        <td><label>
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
+
+      </tr>
+      
+      <tr>
+        <td><label>
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
+
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
+            <span></span></label></td>
+        <td> Essen</td>
         <td>India</td>
         <td>3787843</td>
 
@@ -79,14 +114,16 @@
       <tr>
         <td><label>
             <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
-            <span></span></label>Koniglich Essen</td>
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
         <td>India</td>
         <td>05645</td>
       </tr>
       <tr>
         <td><label>
             <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
-            <span></span></label>Koniglich Essen</td>
+            <span></span></label></td>
+        <td>Koniglich Essen</td>
         <td>India</td>
         <td>05645</td>
 
@@ -94,57 +131,92 @@
       <tr>
         <td><label>
             <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
-            <span></span></label>Koniglich Essen</td>
+            <span></span></label></td>
+        <td>Koniglich Essen</td>
         <td>Germany</td>
         <td>05645</td>
 
       </tr>
       <tr>
         <td><label>
-            <input type="checkbox" onclick="uncheck(this)" class="filled-in"/>
-            <span></span></label>Koniglich Essen</td>
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
         <td>Germany</td>
-        <td>05645</td>
-      <tr>
-        <td><label>
-            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
-            <span></span></label>Berglunds snabbkop</td>
-        <td>Sweden</td>
-        <td>3327456</td>
+        <td>67687</td>
 
       </tr>
       <tr>
         <td><label>
             <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
-            <span></span></label>Berglunds snabbkop</td>
-        <td>Sweden</td>
-        <td>3327456</td>
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
 
       </tr>
       <tr>
         <td><label>
             <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
-            <span></span></label>Berglunds snabbkop</td>
-        <td>Sweden</td>
-        <td>3327456</td>
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
 
       </tr>
       <tr>
         <td><label>
             <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
-            <span></span></label>Berglunds snabbkop</td>
-        <td>Sweden</td>
-        <td>3327456</td>
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
 
       </tr>
       <tr>
         <td><label>
-            <input  type="checkbox" onclick="uncheck(this)" class="filled-in" />
-            <span></span></label>Berglunds snabbkop</td>
-        <td>Sweden</td>
-        <td>3327456</td>
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
 
       </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
+
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
+
+      </tr>
+      <tr>
+        <td><label>
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
+
+      </tr>
+
+      <tr>
+        <td><label>
+            <input type="checkbox" onclick="uncheck(this)" class="filled-in" />
+            <span></span></label></td>
+        <td> Koniglich Essen</td>
+        <td>Germany</td>
+        <td>67687</td>
 
       </tr>
     </table>
@@ -152,6 +224,18 @@
   </div>
 </body>
 <style>
+  th:nth-child(1){
+    width: 1vw;
+  }
+  td:nth-of-type(n+1){
+    vertical-align: top;
+  }
+  th:nth-of-type(n+1){
+    vertical-align: top;
+  }
+  .box{
+    width: 1vw;
+  }
   .close {
     margin-left: 1vw;
   }
@@ -182,6 +266,10 @@
     position: sticky;
     top: 0;
     z-index: 2;
+
+  }
+  th:hover{
+    cursor: pointer;
   }
 
   th[scope=row] {
@@ -241,6 +329,9 @@
     margin-left: 10px !important;
   }
 
+.searchbox:hover{
+  border-bottom: 2px solid black;
+}
   .header {
     background-color: #f6f7f9;
   }
@@ -248,19 +339,17 @@
   .material-icons {
     color: #979797;
     font-size: 1.5rem;
+    vertical-align: bottom;
   }
-
-  sup {
+td{
+  vertical-align: baseline; 
+}
+th
+  span {
     font-size: 14px;
   }
 </style>
 <script>
-  function addseletall() {
-    document.querySelector("#h0").innerHTML = `
-            <label class="col s3"> <input type="checkbox" onclick="selectAll()" id="select-all" class="filled-in">
-            <span></span></label><sup onclick="sortTable(0)">Name</sup><span class="notshow material-icons"></span>`
-  }
-  addseletall()
   var TableFilter = (function (myArray) {
     var search_input;
 
@@ -394,17 +483,16 @@
       head.innerHTML = "arrow_downward"
     }
   }
- function selectAll() {
-     var checkboxes = document.getElementsByTagName('input'), val = null;    
-     for (var i = 0; i < checkboxes.length; i++)
-     {
-         if (checkboxes[i].type == 'checkbox')
-         {
-             if (val === null) val = checkboxes[i].checked;
-             checkboxes[i].checked = val;
-         }
-     }
- }
+  function selectAll() {
+    document.querySelector("#select-all").classList.add("filled-in");
+    var checkboxes = document.getElementsByTagName('input'), val = null;
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].type == 'checkbox') {
+        if (val === null) val = checkboxes[i].checked;
+        checkboxes[i].checked = val;
+      }
+    }
+  }
 
   function reset() {
     var inputs = document.querySelector('.search-input');
@@ -412,9 +500,10 @@
     window.location.reload()
   }
 
-  function uncheck(ele){
-    if(!ele.checked)
-    document.querySelector("#select-all").checked=false;
+  function uncheck(ele) {
+    if (!ele.checked)
+    document.querySelector("#select-all").checked  = false;
+      document.querySelector("#select-all").indeterminate = true;
   }
 </script>
 
